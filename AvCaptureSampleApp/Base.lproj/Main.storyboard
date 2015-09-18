@@ -25,11 +25,20 @@
                                     <constraint firstAttribute="height" constant="240" id="VD9-Sr-1f0"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlq-NV-kqE">
+                                <rect key="frame" x="130" y="482" width="60" height="30"/>
+                                <state key="normal" title="切り替え"/>
+                                <connections>
+                                    <action selector="didTapChangeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aYc-jT-b9y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ASq-3Z-SVM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="C23-W0-AjX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ASq-3Z-SVM" secondAttribute="trailing" constant="24" id="Egp-FT-L5Z"/>
+                            <constraint firstItem="tlq-NV-kqE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eut-Pe-wug"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tlq-NV-kqE" secondAttribute="bottom" constant="56" id="iAB-Cy-v7s"/>
                             <constraint firstItem="ASq-3Z-SVM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="104" id="vAa-b5-2rM"/>
                         </constraints>
                     </view>

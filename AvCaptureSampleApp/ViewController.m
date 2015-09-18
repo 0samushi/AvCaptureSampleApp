@@ -13,10 +13,19 @@
 {
     AVCaptureSession *session;
     AVCaptureDevice *device;
+    
+    AVCaptureDeviceInput *frontCameraInput;
+    AVCaptureDeviceInput *backCameraInput;
+    
     AVCaptureMovieFileOutput *movieOutput;
+    
+    AVCaptureDevicePosition currentPos;
 }
 
 @property (weak, nonatomic) IBOutlet PreviewView *previewView;
+
+
+- (IBAction)didTapChangeButton:(id)sender;
 
 @end
 
@@ -29,18 +38,28 @@
     
     // セッション作成
     session = [[AVCaptureSession alloc] init];
+    session.sessionPreset = AVCaptureSessionPresetLow;
+    
     
     // デバイス取得
-    id devices = [AVCaptureDevice devices];
+    AVCaptureDevice *frontCamera;
+    AVCaptureDevice *backCamera;
+    id devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
     for (AVCaptureDevice *d in devices) {
         if (d.position == AVCaptureDevicePositionFront) {
-            device = d;
+            frontCamera = d;
+        }
+        else if (d.position == AVCaptureDevicePositionBack) {
+            backCamera = d;
         }
     }
     
-    // セッションに映像のインプット追加
-    id movieInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:NULL];
-    [session addInput:movieInput];
+    // インプットの初期化
+    frontCameraInput = [AVCaptureDeviceInput deviceInputWithDevice:frontCamera error:NULL];
+    backCameraInput = [AVCaptureDeviceInput deviceInputWithDevice:backCamera error:NULL];
+    
+    [session addInput:frontCameraInput];
+    currentPos = AVCaptureDevicePositionFront;
     
     // セッションに音声のインプット追加
     id audioCaptureDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeAudio];
@@ -52,8 +71,6 @@
     [session addOutput:movieOutput];
 }
 
-
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -62,5 +79,38 @@
     [self.previewView setSession:session];
     [session startRunning];
 }
+
+- (void)changeToFrontCamera
+{
+    [session removeInput:backCameraInput];
+    [session addInput:frontCameraInput];
+    currentPos = AVCaptureDevicePositionFront;
+}
+
+- (void)changeToBackCamera
+{
+    [session removeInput:frontCameraInput];
+    [session addInput:backCameraInput];
+    currentPos = AVCaptureDevicePositionBack;
+}
+
+// 前面カメラと背面カメラの切り替え
+- (void)toggleCameraPosition
+{
+    [session beginConfiguration];
+    if (currentPos == AVCaptureDevicePositionFront) {
+        [self changeToBackCamera];
+    }
+    else if (currentPos == AVCaptureDevicePositionBack) {
+        [self changeToFrontCamera];
+    }
+    [session commitConfiguration];
+}
+
+
+- (IBAction)didTapChangeButton:(id)sender {
+    [self toggleCameraPosition];
+}
+
 
 @end
