@@ -13,12 +13,9 @@
 {
     AVCaptureSession *session;
     AVCaptureDevice *device;
-    
     AVCaptureDeviceInput *frontCameraInput;
     AVCaptureDeviceInput *backCameraInput;
-    
     AVCaptureMovieFileOutput *movieOutput;
-    
     AVCaptureDevicePosition currentPos;
 }
 
@@ -38,8 +35,6 @@
     
     // セッション作成
     session = [[AVCaptureSession alloc] init];
-    session.sessionPreset = AVCaptureSessionPresetLow;
-    
     
     // デバイス取得
     AVCaptureDevice *frontCamera;
