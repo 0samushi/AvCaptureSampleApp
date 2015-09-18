@@ -15,6 +15,9 @@
 		0B1A6E391BABC2F800688DDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B1A6E371BABC2F800688DDB /* LaunchScreen.storyboard */; };
 		0B1A6E441BABC2F800688DDB /* AvCaptureSampleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A6E431BABC2F800688DDB /* AvCaptureSampleAppTests.m */; };
 		0B1A6E4F1BABC2F800688DDB /* AvCaptureSampleAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A6E4E1BABC2F800688DDB /* AvCaptureSampleAppUITests.m */; };
+		0B1A6E5E1BABC47E00688DDB /* PreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A6E5D1BABC47E00688DDB /* PreviewView.m */; settings = {ASSET_TAGS = (); }; };
+		0B1A6E601BABC4B800688DDB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1A6E5F1BABC4B800688DDB /* AVFoundation.framework */; };
+		0B1A6E621BABC4C000688DDB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1A6E611BABC4C000688DDB /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,10 @@
 		0B1A6E4A1BABC2F800688DDB /* AvCaptureSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvCaptureSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1A6E4E1BABC2F800688DDB /* AvCaptureSampleAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvCaptureSampleAppUITests.m; sourceTree = "<group>"; };
 		0B1A6E501BABC2F800688DDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B1A6E5C1BABC47E00688DDB /* PreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
+		0B1A6E5D1BABC47E00688DDB /* PreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewView.m; sourceTree = "<group>"; };
+		0B1A6E5F1BABC4B800688DDB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0B1A6E611BABC4C000688DDB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1A6E621BABC4C000688DDB /* AssetsLibrary.framework in Frameworks */,
+				0B1A6E601BABC4B800688DDB /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +90,8 @@
 		0B1A6E1D1BABC2F800688DDB = {
 			isa = PBXGroup;
 			children = (
+				0B1A6E611BABC4C000688DDB /* AssetsLibrary.framework */,
+				0B1A6E5F1BABC4B800688DDB /* AVFoundation.framework */,
 				0B1A6E281BABC2F800688DDB /* AvCaptureSampleApp */,
 				0B1A6E421BABC2F800688DDB /* AvCaptureSampleAppTests */,
 				0B1A6E4D1BABC2F800688DDB /* AvCaptureSampleAppUITests */,
@@ -105,6 +116,8 @@
 				0B1A6E2D1BABC2F800688DDB /* AppDelegate.m */,
 				0B1A6E2F1BABC2F800688DDB /* ViewController.h */,
 				0B1A6E301BABC2F800688DDB /* ViewController.m */,
+				0B1A6E5C1BABC47E00688DDB /* PreviewView.h */,
+				0B1A6E5D1BABC47E00688DDB /* PreviewView.m */,
 				0B1A6E321BABC2F800688DDB /* Main.storyboard */,
 				0B1A6E351BABC2F800688DDB /* Assets.xcassets */,
 				0B1A6E371BABC2F800688DDB /* LaunchScreen.storyboard */,
@@ -207,6 +220,7 @@
 				TargetAttributes = {
 					0B1A6E251BABC2F800688DDB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = YF2AGYP97R;
 					};
 					0B1A6E3E1BABC2F800688DDB = {
 						CreatedOnToolsVersion = 7.0;
@@ -271,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B1A6E311BABC2F800688DDB /* ViewController.m in Sources */,
+				0B1A6E5E1BABC47E00688DDB /* PreviewView.m in Sources */,
 				0B1A6E2E1BABC2F800688DDB /* AppDelegate.m in Sources */,
 				0B1A6E2B1BABC2F800688DDB /* main.m in Sources */,
 			);
@@ -363,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -401,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AvCaptureSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fictbox.AvCaptureSampleApp;
@@ -424,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AvCaptureSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fictbox.AvCaptureSampleApp;
